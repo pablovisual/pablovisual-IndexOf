@@ -10,7 +10,22 @@ public class IndexOf {
      * @param n a possible value of arr.
      * @return the first index (position) of n in arr. if n does not exist in arr, return -1.
      */
-    public int getIndex(int[] arr, int n){
-        return -1;
+    public int getIndex(int[] arr, int n) {
+        return search(arr, n, 0);
+    }
+
+    public int search(int[] arr, int n, int target) {
+        if(target > arr.length - 1) {
+            System.out.println(target);
+            return -1;
+        }
+
+        else {
+            if (arr[target] == n) {
+                return target;
+            }
+    
+            return search(arr, n, target + 1);
+        }   
     }
 }
