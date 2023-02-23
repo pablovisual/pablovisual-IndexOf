@@ -15,11 +15,14 @@ public class IndexOf {
     }
 
     public int search(int[] arr, int n, int target) {
-        if(target > arr.length - 1) {
-            System.out.println(target);
+        /*check first if target is not out of bounds
+        (meaning the value in the arr was not found or 
+        if arr is empty*/
+        if(target > arr.length - 1 || arr.length == 0) {
             return -1;
         }
 
+        //otherwise check if target is found and return target
         else {
             if (arr[target] == n) {
                 return target;
